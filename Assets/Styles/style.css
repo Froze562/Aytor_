@@ -1,0 +1,67 @@
+/*<===== Common-CSS start =====>*/
+*{
+     margin: 0; padding: 0; outline: 0;
+     box-sizing: border-box;
+}
+h1,h2,h3,h4,h5,h6,p,ul,ol,span{margin: 0; padding: 0;}
+a{text-decoration: none; color: #000;}
+ul{list-style-type: none;}
+:root{
+     --common-font: "Josefin Sans", sans-serif;
+     --common-color: #FF6F61;
+}
+body{
+     user-select: none;
+     -webkit-user-select: none; -moz-user-select: none; -o-user-select: none;
+     font-family: var(--common-font);
+}
+::-webkit-scrollbar{display: none;}
+/*<===== Common-CSS end =====>*/
+/*<===== Home Page Start =====>*/
+
+
+.navbarr{
+     height: 90px;
+     align-items: center; justify-content: space-between;
+}
+.navbarr ul li{
+     border-radius: 8px; padding: 10px;
+     margin: 7px; font-size: 18px;
+}
+.navbarr ul li a{display: flex; justify-content: space-between;}
+.navbarr .nav-menu ul li a span{pointer-events: none; margin-left: 5px;}
+.navbarr ul li:hover{box-shadow: rgba(0, 0, 0, 0.325) 0px 2px 4px 0px inset;}
+.navbarr ul li:hover a{color: #FF6F61;}
+.nav-menu img{width: 170px; margin: 40px;}
+.nav-menu.active{left: 0; opacity: 1;}
+.nav-btn{margin: 25px 20px 0 0; cursor: pointer;}
+.line1, .line2, .line3{
+	width: 30px; height: 5px; margin-bottom: 5px;
+	background-color: #000;
+	border-radius: 10px;
+	transition: all 0.1s ease;
+}
+.active .line1{transform: translate(0px , 10px)rotate(45deg);}
+.active .line2{opacity: 0;}
+.active .line3{transform: translate(0px , -10px)rotate(-45deg);}
+
+@media (max-width:1024px){
+     .navbarr{height: 5rem;}
+     .nav-btn{display: inline !important; position: absolute; top: 0; right: 0;}
+     .nav-menu{
+          position: absolute; top: 0; left: -100%; opacity: 0;
+          width: 270px; height: 100%;
+          border-radius: 20px;
+          transition: all 0.8s ease;
+          background-color: rgba(0, 185, 255, 0.4); backdrop-filter: blur(5px);
+     }
+     .nav-menu ul li{font-size: 20px; margin: 25px;}
+     .nav-menu ul{display: block !important;}
+     .nav-menu img{display: flex !important;}
+}
+@media (max-width:768px){.navbarr .d-flex img{margin-top: 5px;}}
+@media (max-width:425px){
+     .navbarr{height: 4rem;}
+     .navbarr .d-flex img{width: 130px; margin-top: 4px;}
+}
+/*<===== Home Page End =====>*/
